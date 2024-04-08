@@ -1,0 +1,32 @@
+def calcula_investimento_cds():
+  """
+  Calcula o valor total investido e o valor médio por CD.
+
+  Returns:
+    tuple: (valor_total, valor_medio)
+  """
+
+  # Lê a quantidade de CDs
+  quantidade_cds = int(input("Digite a quantidade de CDs: "))
+
+  # Inicializa variáveis
+  valor_total = 0
+  valor_medio = 0
+
+  # Lê o valor de cada CD
+  for i in range(quantidade_cds):
+    valor_cd = float(input(f"Digite o valor do CD {i+1}: "))
+    valor_total += valor_cd
+
+  # Calcula o valor médio
+  if quantidade_cds > 0:
+    valor_medio = valor_total / quantidade_cds
+
+  return valor_total, valor_medio
+
+# Chama a função
+valor_total, valor_medio = calcula_investimento_cds()
+
+# Imprime os resultados
+print(f"Valor total investido: R${valor_total:.2f}")
+print(f"Valor médio por CD: R${valor_medio:.2f}")
